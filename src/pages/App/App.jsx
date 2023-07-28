@@ -6,6 +6,8 @@ import AddItem from '../../component/AddItem/AddItem';
 import EditItem from '../../component/EditItem/EditItem';
 import Item from '../../component/Item/Item';
 import ItemIndex from '../../component/ItemIndex/ItemIndex';
+import LoginPage from '../../component/LoginPage/LoginPage'
+import Home from '../../pages/Home/Home'
 
 
 import { Routes, Route } from 'react-router-dom';
@@ -13,6 +15,8 @@ import { Fragment } from 'react';
 
 export default function App() {
 	const [items, setItems] = useState([]);
+
+	const [user, setUser] = useState(null);
 
 	async function getItems() {
 		try {
@@ -35,14 +39,6 @@ export default function App() {
 	useEffect(() => {
 		getItems();
 	}, []);
-	const allItems = items.map(item => {
-		return (
-			<Fragment key={item._id}>
-				<Item item={item} />
-				<hr />
-			</Fragment>
-		);
-	});
 
 	async function handleDelete(deletedItem) {
 		try {
@@ -65,17 +61,41 @@ export default function App() {
 			console.log(err);
 		}
 	}
-
-	return (
-		<div className="App">
-			<NavBar />
-			<Routes>
-				{/* <Route path='/' element={<Menu items={items} />} /> */}
-				<Route path='/admin/items' element={<ItemIndex items={items} handleEdit={handleEdit} handleDelete={handleDelete}/>} />
-				<Route path='/admin/add' element={<AddItem handleCreate={handleCreate} />} />
-				<Route path='/admin/edit/:itemId' element={<EditItem handleEdit={handleEdit} />} />
-			</Routes>
-		</div>
-	);
+	
+	if (user === 'admin123') {
+		return(
+			<main className="App">
+				<>
+					<NavBar />
+					<Routes>
+						{/* <Route path='/' element={<Menu items={items} />} /> */}
+						<Route path='/' element={
+							<>
+								<AddItem handleCreate={handleCreate} />
+								<ItemIndex items={items} handleEdit={handleEdit} handleDelete={handleDelete}/>
+							</>}>
+						</Route>
+					</Routes>
+				</>
+			</main>
+		);
+	} else if (!user) {
+		return(
+			<main className="App">
+				<LoginPage setUser={setUser} />
+			</main>
+		);
+	} else {
+		return(
+			<main className="App">
+				<>
+					<NavBar />
+					<Routes>
+						<Route path='/' element={<Home items={items} />} />
+					</Routes>
+				</>
+			</main>
+		);
+	}
 }
 

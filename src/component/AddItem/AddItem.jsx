@@ -22,6 +22,7 @@ const Add = ({ handleCreate }) => {
 
     return (
         <>
+            <h1>ADD ITEM</h1>
             <form onSubmit={handleSubmit}>
                 <input type='text' placeholder='title' name='title' onChange={handleChange} />
                 <br />
