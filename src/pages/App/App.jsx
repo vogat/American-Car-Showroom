@@ -71,9 +71,14 @@ export default function App() {
 			<NavBar />
 			<Routes>
 				{/* <Route path='/' element={<Menu items={items} />} /> */}
-				<Route path='/admin/items' element={<ItemIndex items={items} handleEdit={handleEdit} handleDelete={handleDelete}/>} />
-				<Route path='/admin/add' element={<AddItem handleCreate={handleCreate} />} />
-				<Route path='/admin/edit/:itemId' element={<EditItem handleEdit={handleEdit} />} />
+				<Route path='/admin' element={
+          <>
+            <AddItem handleCreate={handleCreate} />
+            <ItemIndex items={items} handleEdit={handleEdit} handleDelete={handleDelete}/>
+          </>}>
+        </Route>
+				{/* <Route path='/admin/add' element={<AddItem handleCreate={handleCreate} />} />
+				<Route path='/admin/edit/:itemId' element={<EditItem handleEdit={handleEdit} />} /> */}
 			</Routes>
 		</div>
 	);
