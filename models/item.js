@@ -18,7 +18,7 @@ const itemSchema = new Schema({
     },
     category: {
         type: String,
-        enum: ['Italian', 'Mexican'],
+        enum: ['Italian', 'Mexican', 'American'],
         required: [true, 'Category is required'],
         default: 'Italian',
     },
