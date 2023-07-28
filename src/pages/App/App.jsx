@@ -6,6 +6,7 @@ import AddItem from '../../component/AddItem/AddItem';
 import EditItem from '../../component/EditItem/EditItem';
 import Item from '../../component/Item/Item';
 import ItemIndex from '../../component/ItemIndex/ItemIndex';
+import LoginPage from '../../component/LoginPage/LoginPage'
 
 
 import { Routes, Route } from 'react-router-dom';
@@ -13,6 +14,8 @@ import { Fragment } from 'react';
 
 export default function App() {
 	const [items, setItems] = useState([]);
+
+	const [user, setUser] = useState(null);
 
 	async function getItems() {
 		try {
@@ -67,20 +70,24 @@ export default function App() {
 	}
 
 	return (
-		<div className="App">
-			<NavBar />
-			<Routes>
-				{/* <Route path='/' element={<Menu items={items} />} /> */}
-				<Route path='/admin' element={
-          <>
-            <AddItem handleCreate={handleCreate} />
-            <ItemIndex items={items} handleEdit={handleEdit} handleDelete={handleDelete}/>
-          </>}>
-        </Route>
-				{/* <Route path='/admin/add' element={<AddItem handleCreate={handleCreate} />} />
-				<Route path='/admin/edit/:itemId' element={<EditItem handleEdit={handleEdit} />} /> */}
-			</Routes>
-		</div>
+		<main className="App">
+			{user ? (
+				<>
+					<NavBar />
+					<Routes>
+						{/* <Route path='/' element={<Menu items={items} />} /> */}
+						<Route path='/admin' element={
+							<>
+								<AddItem handleCreate={handleCreate} />
+								<ItemIndex items={items} handleEdit={handleEdit} handleDelete={handleDelete}/>
+							</>}>
+						</Route>
+					</Routes>
+				</>
+			) : (
+       		 <LoginPage setUser={setUser} />
+      		)}
+    	</main>
 	);
 }
 
