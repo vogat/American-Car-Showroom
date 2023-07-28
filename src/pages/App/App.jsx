@@ -5,6 +5,7 @@ import NavBar from "../../component/NavBar/NavBar";
 import AddItem from '../../component/AddItem/AddItem';
 import EditItem from '../../component/EditItem/EditItem';
 import Item from '../../component/Item/Item';
+import ItemIndex from '../../component/ItemIndex/ItemIndex';
 
 
 import { Routes, Route } from 'react-router-dom';
@@ -34,11 +35,10 @@ export default function App() {
   useEffect(() => {
     getItems();
 }, []);
-  const allItemsAdmin = items.map(item => {
+  const allItems = items.map(item => {
     return (
        <Fragment key={item._id}>
           <Item item={item}/>
-        <EditItem editedItem={item} handleEdit={handleEdit}/>
           <hr/>
        </Fragment>
     );
@@ -66,9 +66,10 @@ async function handleEdit(editedItem) {
   return (
     <div className="App">
       <NavBar/>
-      {allItemsAdmin}
+      {/* {allItems} */}
       <Routes>
-        <Route path='/admin/items' element={<AddItem handleCreate={handleCreate} />} />
+        {/* <Route path='/' element={<Menu items={items} />} /> */}
+        <Route path='/admin/items' element={<ItemIndex items={items}  handleEdit={handleEdit}/>} />
         <Route path='/admin/add' element={<AddItem handleCreate={handleCreate} />} />
         <Route path='/admin/edit/:itemId' element={<EditItem handleEdit={handleEdit}/>} />
       </Routes>
