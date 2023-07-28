@@ -49,8 +49,8 @@ async function edit(req, res) {
 async function deleteItem(req, res) {
 	const id = req.params.itemId
 	try {
-		await Item.findOneAndDelete(id);
-		res.status(204);
+		const response = await Item.findByIdAndDelete(id);
+		res.status(204).json(response);
 	} catch (err) {
 		console.log(err);
 	}
