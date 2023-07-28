@@ -24,7 +24,7 @@ export default function App() {
 
   async function handleCreate(createdItem) {
     try {
-      const response = await axios.post('http://localhost:3001/api/items/', createdItem);
+      const response = await axios.post('http://localhost:3001/api/items', createdItem);
       setItems([...items, response.data]);
    } catch (err) {
       console.log(err);
@@ -34,12 +34,12 @@ export default function App() {
   useEffect(() => {
     getItems();
 }, []);
-  const allItems = items.map(item => {
+  const allItemsAdmin = items.map(item => {
     return (
        <Fragment key={item._id}>
           <Item item={item}/>
-          <hr/>
         <EditItem editedItem={item} handleEdit={handleEdit}/>
+          <hr/>
        </Fragment>
     );
 });
@@ -53,7 +53,7 @@ export default function App() {
 // }
 async function handleEdit(editedItem) {
     try {
-       await axios.put(`http://localhost:3001/api/items${editedItem._id}`, editedItem)
+       await axios.put(`http://localhost:3001/api/items/${editedItem._id}`, editedItem)
        const newItem = items.map(i => {
           return i._id !== editedItem._id ? i : editedItem
        })
@@ -66,10 +66,11 @@ async function handleEdit(editedItem) {
   return (
     <div className="App">
       <NavBar/>
-      {allItems}
+      {allItemsAdmin}
       <Routes>
+        <Route path='/admin/items' element={<AddItem handleCreate={handleCreate} />} />
         <Route path='/admin/add' element={<AddItem handleCreate={handleCreate} />} />
-        <Route path='/admin/edit' element={<EditItem handleEdit={handleEdit} />} />
+        <Route path='/admin/edit/:itemId' element={<EditItem handleEdit={handleEdit}/>} />
       </Routes>
     </div>
   );

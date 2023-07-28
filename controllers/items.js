@@ -39,7 +39,7 @@ async function create(req, res) {
 async function edit(req, res) {
 	const id = req.params.itemId
 	try {
-		const menuItem = await Item.findOneAndUpdate(id, req.body);
+		const menuItem = await Item.findByIdAndUpdate(id, req.body);
 		res.status(202).json(menuItem);
 	} catch (err) {
 		console.log(err);
