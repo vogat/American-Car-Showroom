@@ -13,7 +13,7 @@ async function index(req, res) {
 		const orderItems = await OrderItem.find({});
 		res.status(200).json(orderItems);
 	} catch (err) {
-		console.log(err);
+		res.status(400).json({error: err});
 	}
 }
 
@@ -23,7 +23,7 @@ async function show(req, res) {
 		const orderItem = await OrderItem.findById(id);
 		res.status(200).json(orderItem);
 	} catch (err) {
-		console.log(err);
+		res.status(400).json({error: err});
 	}
 }
 
@@ -32,7 +32,7 @@ async function create(req, res) {
 		const orderItem = await OrderItem.create(req.body);
 		res.status(201).json(orderItem);
 	} catch (err) {
-		console.log(err);
+		res.status(400).json({error: err});
 	}
 }
 
@@ -42,7 +42,7 @@ async function edit(req, res) {
 		const orderItem = await OrderItem.findByIdAndUpdate(id, req.body);
 		res.status(202).json(orderItem);
 	} catch (err) {
-		console.log(err);
+		res.status(400).json({error: err});
 	}
 }
 
@@ -52,6 +52,6 @@ async function deleteItem(req, res) {
 		const response = await OrderItem.findByIdAndDelete(id);
 		res.status(204).json(response);
 	} catch (err) {
-		console.log(err);
+		res.status(400).json({error: err});
 	}
 }
