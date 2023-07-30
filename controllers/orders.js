@@ -28,8 +28,21 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
+    const items = req.body.cartItems;
+    const username = req.body.username;
+    const isDelivery = req.body.isDelivery;
+    const isPaid = false;
+    const price = items.reduce(((acc, item) => acc + item.price), 0);
+
     try {
-        const order = await Order.create(req.body);
+        const order = await Order.create({username, isDelivery, isPaid, price});
+        // use order to set reference for orderItems then create the order items with that reference
+
+        // get orderItems as array, then pus to order.orderItem
+
+
+        // send back order, which will now have references to the items in it
+        // probably need to include the actual orderItems in the response to prevent more api calls
         res.status(201).json(order);
     } catch (err) {
         res.status(400).json({error: err});
