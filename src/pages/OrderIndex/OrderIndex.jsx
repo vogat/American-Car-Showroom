@@ -11,17 +11,16 @@ export default function OrderIndex({ orders, setOrders }) {
     async function getOrderDetails(order) {
 		try {
 			const response = await axios.get(`http://localhost:3001/api/orders/${order._id}`);
-			setOrders(response.data);
+			return response.data;
 		} catch (err) {
 			console.log(err);
 		}
 	}
-	console.log(orders);
+	console.log(orders)
     const allOrders = orders.map(order => {
-		console.log(order);
         return (
                 <Fragment key={order._id}>
-                    <Order order={order} />
+                    <Order order={order} getOrderDetails={getOrderDetails}/>
                 </Fragment>
         );
         }

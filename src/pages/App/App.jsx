@@ -7,9 +7,9 @@ import EditItem from '../../component/EditItem/EditItem';
 import Item from '../../component/Item/Item';
 import ItemIndex from '../../component/ItemIndex/ItemIndex';
 import OrderIndex from '../../pages/OrderIndex/OrderIndex';
+import OrderItem from '../../component/OrderItem/OrderItem';
 import LoginPage from '../../component/LoginPage/LoginPage'
 import Home from '../../pages/Home/Home';
-
 
 import { Routes, Route } from 'react-router-dom';
 import { Fragment } from 'react';
@@ -104,7 +104,7 @@ export default function App() {
 					<Routes>
 						<Route path='/' element={<Home items={items} />} />
 						<Route path='/orders' element={<OrderIndex orders={orders} setOrders={setOrders} />} />
-						<Route path='/orders/detail' element={<OrderItem />} />
+						<Route path='/orders/:orderId' element={<OrderItem />}/>
 					</Routes>
 				</>
 			</main>
