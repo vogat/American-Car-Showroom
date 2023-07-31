@@ -1,4 +1,5 @@
-const Order = require('../models/order')
+const Order = require('../models/order');
+const OrderItem = require('../models/orderItem');
 
 module.exports = {
     index,
@@ -10,7 +11,7 @@ module.exports = {
 
 async function index(req, res) {
     try {
-        const orders = await Order.find({});
+        const orders = await Order.find({}).populate('orderItem');
         res.status(200).json(orders);
     } catch (err) {
         res.status(400).json({error: err});
@@ -20,8 +21,14 @@ async function index(req, res) {
 async function show(req, res) {
     const id = req.params.orderId;
     try {
-        const order = await Order.findById(id);
-        res.status(200).json(order);
+        const order = await Order.findById(id).populate('orderItem');
+        const orderItems = await OrderItem.find({order: order._id})
+
+        const data = {
+            order,
+            orderItems,
+        }
+        res.status(200).json(data);
     } catch (err) {
         res.status(400).json({error: err});
     }
@@ -37,13 +44,23 @@ async function create(req, res) {
     try {
         const order = await Order.create({username, isDelivery, isPaid, price});
         // use order to set reference for orderItems then create the order items with that reference
+        const orderItems = [];
+        for (const item of items) {
+            const completedOrderItem = await OrderItem.create({
+                title: item.title,
+                price:item.price,
+                img: item.img,
+                order:order._id
+            });
+            orderItems.push(completedOrderItem);
+        }
 
-        // get orderItems as array, then pus to order.orderItem
+        const data = {
+            order,
+            orderItems,
+        }
 
-
-        // send back order, which will now have references to the items in it
-        // probably need to include the actual orderItems in the response to prevent more api calls
-        res.status(201).json(order);
+        res.status(201).json(data);
     } catch (err) {
         res.status(400).json({error: err});
     }
