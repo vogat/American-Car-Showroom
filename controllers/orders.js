@@ -11,7 +11,7 @@ module.exports = {
 
 async function index(req, res) {
     try {
-        const orders = await Order.find({}).populate('orderItem');
+        const orders = await Order.find({});
         res.status(200).json(orders);
     } catch (err) {
         res.status(400).json({error: err});
@@ -21,7 +21,7 @@ async function index(req, res) {
 async function show(req, res) {
     const id = req.params.orderId;
     try {
-        const order = await Order.findById(id).populate('orderItem');
+        const order = await Order.findById(id);
         const orderItems = await OrderItem.find({order: order._id})
 
         const data = {
