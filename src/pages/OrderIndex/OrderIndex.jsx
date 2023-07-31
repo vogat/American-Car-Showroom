@@ -11,7 +11,7 @@ export default function OrderIndex({ orders, setOrders }) {
 
     async function getOrderDetails(order) {
 		try {
-			const response = await axios.get(`http://localhost:3001/api/orders/${order._id}`);
+			const response = await axios.get(`http://meltinpot.onrender.com/api/orders/${order._id}`);
 			
 			setOrderDetail(response.data);
 		} catch (err) {
