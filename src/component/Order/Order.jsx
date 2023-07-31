@@ -1,12 +1,14 @@
 import './Order.css';
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Order({ order, getOrderDetails }) {
-	const response = getOrderDetails(order);
-	// console.log(response.then(a => console.log(a)));
-	console.log(response)
-	const data = response
+export default function Order({ order, orderDetail, getOrderDetails }) {
+	
+	useEffect(() => {
+		getOrderDetails(order);
+	}, []);
+
+	const data = orderDetail;
 	return (
 		<>
 			<Link to={`/orders/${order._id}`} state={{data}}>
