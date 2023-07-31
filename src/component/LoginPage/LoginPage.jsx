@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './LoginPage.css'
 
 export default function SignupPage(props) {
   const [inputValue, setInputValue] = useState("");
@@ -16,11 +17,11 @@ export default function SignupPage(props) {
     <div className="full-screen-container">
       <div className="login-container">
         <h3 className="login-title">
-          Please enter your desired username below
+          Please enter your order name below
         </h3>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <label>Username</label>
+            <label>order name</label>
             <input type="text" onChange={handleChange} />
           </div>
           <button type="submit" className="login-button">

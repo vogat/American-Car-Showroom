@@ -89,7 +89,6 @@ export default function App() {
 		return(
 			<main className="App">
 				<>
-					<NavBar />
 					<Routes>
 						<Route path='/' element={<Home items={items} />} />
 					</Routes>
