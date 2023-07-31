@@ -6,6 +6,7 @@ import AddItem from '../../component/AddItem/AddItem';
 import EditItem from '../../component/EditItem/EditItem';
 import Item from '../../component/Item/Item';
 import ItemIndex from '../../component/ItemIndex/ItemIndex';
+import OrderIndex from '../../pages/OrderIndex/OrderIndex';
 import LoginPage from '../../component/LoginPage/LoginPage'
 import Home from '../../pages/Home/Home';
 
@@ -102,7 +103,7 @@ export default function App() {
 				<>
 					<Routes>
 						<Route path='/' element={<Home items={items} />} />
-						<Route path='/orders' element={<Order orders={orders} />} />
+						<Route path='/orders' element={<OrderIndex orders={orders} setOrders={setOrders} />} />
 					</Routes>
 				</>
 			</main>
