@@ -1,13 +1,17 @@
 import './Order.css';
-import OrderItem from '../OrderItem/OrderItem';
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export default async function Order({ order }) {
-	const orderItems = await axios.get('http://localhost:3001/api/orders');
+export default function Order({ order, orderDetail, getOrderDetails }) {
+	
+	useEffect(() => {
+		getOrderDetails(order);
+	}, []);
+
+	const data = orderDetail;
 	return (
 		<>
-			<Link to={`/orders/${order._id}`} state={{order}}>
+			<Link to={`/orders/${order._id}`} state={{data}}>
 				<div className='CartArea'>
 					<h2>{order.username}</h2>
 					<h2>{order.price}</h2>
