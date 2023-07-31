@@ -22,7 +22,7 @@ export default function App() {
 
 	async function getItems() {
 		try {
-			const response = await axios.get('http://meltinpot.onrender.com/api/items');
+			const response = await axios.get('http://meltinpot.onrender.com/api/items/');
 			setItems(response.data);
 		} catch (err) {
 			console.log(err);
@@ -31,7 +31,7 @@ export default function App() {
 
 	async function getOrders() {
 		try {
-			const response = await axios.get('http://meltinpot.onrender.com/api/orders');
+			const response = await axios.get('http://meltinpot.onrender.com/api/orders/');
 			setOrders(response.data);
 		} catch (err) {
 			console.log(err);
@@ -40,7 +40,7 @@ export default function App() {
 
 	async function handleCreate(createdItem) {
 		try {
-			const response = await axios.post('http://meltinpot.onrender.com/api/items', createdItem);
+			const response = await axios.post('http://meltinpot.onrender.com/api/items/', createdItem);
 			setItems([...items, response.data]);
 		} catch (err) {
 			console.log(err);
@@ -54,7 +54,7 @@ export default function App() {
 
 	async function handleDelete(deletedItem) {
 		try {
-			await axios.delete(`http://meltinpot.onrender.com/api/items/${deletedItem._id}`);
+			await axios.delete(`http://meltinpot.onrender.com/api/items/${deletedItem._id}/`);
 			const notDeletedItems = items.filter(item => item._id !== deletedItem._id)
 			setItems(notDeletedItems);
 		} catch (err) {
@@ -64,7 +64,7 @@ export default function App() {
 
 	async function handleEdit(editedItem) {
 		try {
-			await axios.put(`http://meltinpot.onrender.com/api/items/${editedItem._id}`, editedItem);
+			await axios.put(`http://meltinpot.onrender.com/api/items/${editedItem._id}/`, editedItem);
 			const newItems = items.map(i => {
 				return i._id !== editedItem._id ? i : editedItem;
 			});
