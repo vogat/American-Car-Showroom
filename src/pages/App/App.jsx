@@ -104,6 +104,7 @@ export default function App() {
 					<Routes>
 						<Route path='/' element={<Home items={items} />} />
 						<Route path='/orders' element={<OrderIndex orders={orders} setOrders={setOrders} />} />
+						<Route path='/orders/detail' element={<OrderItem />} />
 					</Routes>
 				</>
 			</main>
