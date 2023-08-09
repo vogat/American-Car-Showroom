@@ -1,27 +1,27 @@
-const Item = require('../models/item')
+const Car = require('../models/car');
 
 module.exports = {
 	index,
 	show,
 	create,
 	edit,
-	deleteItem,
+	deleteCar,
 }
 
 async function index(req, res) {
 	try {
-		const menuItems = await Item.find({});
-		res.status(200).json(menuItems);
+		const gallery = await Car.find({});
+		res.status(200).json(gallery);
 	} catch (err) {
 		res.status(400).json({error: err});
 	}
 }
 
 async function show(req, res) {
-	const id = req.params.itemId
+	const id = req.params.carId
 	try {
-		const menuItem = await Item.findById(id);
-		res.status(200).json(menuItem);
+		const gallery = await Car.findById(id);
+		res.status(200).json(gallery);
 	} catch (err) {
 		res.status(400).json({error: err});
 	}
@@ -29,27 +29,27 @@ async function show(req, res) {
 
 async function create(req, res) {
 	try {
-		const item = await Item.create(req.body);
-		res.status(201).json(item)
+		const car = await Car.create(req.body);
+		res.status(201).json(car)
 	} catch (err) {
 		res.status(400).json({error: err});
 	}
 }
 
 async function edit(req, res) {
-	const id = req.params.itemId
+	const id = req.params.carId
 	try {
-		const menuItem = await Item.findByIdAndUpdate(id, req.body);
-		res.status(202).json(menuItem);
+		const gallery = await Car.findByIdAndUpdate(id, req.body);
+		res.status(202).json(gallery);
 	} catch (err) {
 		res.status(400).json({error: err});
 	}
 }
 
-async function deleteItem(req, res) {
-	const id = req.params.itemId
+async function deleteCar(req, res) {
+	const id = req.params.carId
 	try {
-		const response = await Item.findByIdAndDelete(id);
+		const response = await Car.findByIdAndDelete(id);
 		res.status(204).json(response);
 	} catch (err) {
 		res.status(400).json({error: err});
