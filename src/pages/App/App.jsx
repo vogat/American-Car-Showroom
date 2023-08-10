@@ -114,7 +114,7 @@ export default function App() {
 			<Nav />
 			<Home />
 			<Add handleCreate={handleCreate} />
-			<Cars />
+			<Cars cars={cars}/>
 		</div>
 	)
 }
