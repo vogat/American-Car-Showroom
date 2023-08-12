@@ -18,7 +18,7 @@ const carSchema = new Schema({
     img: {
         type: String,
         required: [true, 'Image is required. If need, upload your photo using a website like Imgur.'],
-    }
+    },
 })
 
 module.exports = mongoose.model('Car', carSchema)

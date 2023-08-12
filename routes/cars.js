@@ -8,7 +8,7 @@ router.get('/:carId', galleryController.show);
 
 router.delete('/:carId', galleryController.deleteCar);
 
-router.put('/:carId', galleryController.edit);
+router.put('/:carId/edit', galleryController.edit);
 
 router.post('/', galleryController.create);
 

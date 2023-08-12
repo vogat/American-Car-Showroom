@@ -255,3 +255,20 @@ nav .link-styled {
   object-fit: cover;
   border-radius: 2vmin;
 }
+
+#cars:hover {
+  background-color: #ffbaba;
+  box-shadow: 0 0 20px #cf4242;
+  transform: scale(1.1);
+  transform: translatey(-20px);
+  -webkit-transform: translatey(-20px);
+  -moz-transform: translatey(-20px);
+}
+
+#cars:active {
+  background-color: #bee5ff;
+  box-shadow: 0 0 20px #cf4242;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  transform: scale(0.9);
+}

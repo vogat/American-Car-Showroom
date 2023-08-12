@@ -1,10 +1,13 @@
-import './App.css';
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Nav from '../../components/Nav';
 import Add from '../../components/Add';
 import Cars from '../../components/Cars';
 import Home from '../../components/Home';
+import MainPage from '../MainPage';
+import SelectedCar from '../SelectedCar';
+import EditCar from '../EditCar';
 
 export default function App() {
 
@@ -110,12 +113,15 @@ export default function App() {
 	// }
 
 	return(
-		<div className='App'>
-			<Nav />
-			<Home />
-			<Add handleCreate={handleCreate} />
-			<Cars cars={cars}/>
-		</div>
+		<main className="App">
+				<>
+					<Routes>
+						<Route path='/' element={<MainPage cars={cars} handleCreate={handleCreate} />} />
+						<Route path='/:carId' element={<SelectedCar cars={cars} handleEdit={handleEdit} />} />
+						<Route path='/:carId/edit' element={<EditCar cars={cars} handleDelete={handleDelete} handleEdit={handleEdit} />} />
+					</Routes>
+				</>
+			</main>
 	)
 }
 
