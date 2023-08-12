@@ -26,7 +26,7 @@ function Selected({cars, handleDelete, handleEdit, carDetail, getCarDetails}) {
     console.log(data)
 
     const handleBack = () => {
-        data='';
+       //scroll
     }
 
     const [car, setCar] = useState({...data})
@@ -37,6 +37,7 @@ function Selected({cars, handleDelete, handleEdit, carDetail, getCarDetails}) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        console.log(car)
         handleEdit(car)
     }
 

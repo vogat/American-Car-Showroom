@@ -41,9 +41,9 @@ const WebgiViewer = forwardRef((props, ref) => {
             props.contentRef.current.style.opacity = "0";
 
             gsap.to(positionRef, {
-                x: 13.04,
-                y: -2.01,
-                z: 2.29,
+                x: -7.72,
+                y: 3.65,
+                z: 4.9,
                 duration: 2,
                 onUpdate: () => {
                     viewerRef.setDirty();
@@ -51,7 +51,7 @@ const WebgiViewer = forwardRef((props, ref) => {
                 }
             });
 
-            gsap.to(targetRef, { x: 0.11, y: 0.0, z: 0.0, duration: 2 });
+            gsap.to(targetRef, { x: 0.0, y: 0.0, z: 0.0, duration: 2 });
 
             viewerRef.scene.activeCamera.setCameraOptions({ controlsEnabled: true });
         }
@@ -142,9 +142,9 @@ const WebgiViewer = forwardRef((props, ref) => {
         setPreviewMode(false);
 
         gsap.to(positionRef, {
-            x: !isMobile ? 1.56 : 9.36,
-            y: !isMobile ? 5.0 : 10.95,
-            z: !isMobile ? 0.01 : 0.09,
+            x: !isMobile ? -5.66 : -7.0,
+            y: !isMobile ? 2.68 : -12.2,
+            z: !isMobile ? 3.59: -6.0,
             scrollTrigger: {
                 trigger: '.display-section',
                 start: "top bottom",
@@ -158,9 +158,9 @@ const WebgiViewer = forwardRef((props, ref) => {
             }
         });
         gsap.to(targetRef, {
-            x: !isMobile ? -0.55 : -1.62,
-            y: !isMobile ? 0.32 : 0.02,
-            z: !isMobile ? 0.0 : -0.06,
+            x: !isMobile ? 0 : -1.62,
+            y: !isMobile ? 0 : 0.62,
+            z: !isMobile ? 0 : -0.06,
             scrollTrigger: {
                 trigger: '.display-section',
                 start: "top bottom",

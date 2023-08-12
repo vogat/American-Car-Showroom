@@ -15,6 +15,65 @@ code {
     monospace;
 }
 
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #aaaaaa;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+.App #content {
+  transition-duration: 0.3s;
+}
+
+#webgi-canvas {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+#webgi-canvas-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  pointer-events: none;
+  min-height: 831px;
+  background: transparent;
+}
+
+#webgi-canvas-container .button {
+  background: #0071e3;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 400;
+  min-width: 28px;
+  padding: 8px 16px;
+  border-radius: 980px;
+  position: absolute;
+  top: 30px;
+  border: none;
+  z-index: 1;
+  transition-duration: 0.3s;
+}
+
 nav.nav-wrapper {
   margin: 0;
   width: 100%;
@@ -143,7 +202,7 @@ nav .link-styled {
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 .add-section .title {
@@ -215,7 +274,7 @@ nav .link-styled {
   padding: 50px 0 400px 0;
   height: 100vh;
   box-sizing: border-box;
-  /* opacity: 0; */
+  opacity: 0;
   position: relative;
 }
 
@@ -271,4 +330,78 @@ nav .link-styled {
   transition: all 0.25s;
   -webkit-transition: all 0.25s;
   transform: scale(0.9);
+}
+
+.display-section.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 980px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0 400px 0;
+  height: 100vh;
+  box-sizing: border-box;
+  opacity: 0;
+  position: relative;
+}
+
+.display-section .title {
+  color: #86868b;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  margin-bottom: 0;
+}
+
+.display-section .text {
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(180deg, #ffb6ff, #b344ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding-top: 0.5px;
+  margin-top: 16px;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.display-section .description {
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.display-section .button {
+  background: #0071e3;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 400;
+  min-width: 28px;
+  padding: 8px 16px;
+  border-radius: 980px;
+  margin: 15px;
+}
+
+.display-section .back-button {
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-size: 0.6rem;
+  cursor: pointer;
+  transition: all 0.8s ease;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.selectedCar {
+  opacity: 1;
 }

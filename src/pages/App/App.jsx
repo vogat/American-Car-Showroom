@@ -49,7 +49,6 @@ export default function App() {
 
 	useEffect(() => {
 		getCars();
-		// getOrders();
 	}, []);
 
 	async function handleDelete(deletedCar) {
@@ -68,6 +67,7 @@ export default function App() {
 			const newCars = cars.map(i => {
 				return i._id !== editedCar._id ? i : editedCar;
 			});
+			console.log(newCars)
 			setCars(newCars);
 		} catch (err) {
 			console.log(err);
@@ -114,14 +114,14 @@ export default function App() {
 
 	return(
 		<main className="App">
-				<>
-					<Routes>
-						<Route path='/' element={<MainPage cars={cars} handleCreate={handleCreate} />} />
-						<Route path='/:carId' element={<SelectedCar cars={cars} handleEdit={handleEdit} />} />
-						<Route path='/:carId/edit' element={<EditCar cars={cars} handleDelete={handleDelete} handleEdit={handleEdit} />} />
-					</Routes>
-				</>
-			</main>
+			<>
+				<Routes>
+					<Route path='/' element={<MainPage cars={cars} handleCreate={handleCreate} />} />
+					<Route path='/:carId' element={<SelectedCar cars={cars} handleDelete={handleDelete} handleEdit={handleEdit} />} />
+					<Route path='/:carId/edit' element={<EditCar cars={cars} handleDelete={handleDelete} handleEdit={handleEdit} />} />
+				</Routes>
+			</>
+		</main>
 	)
 }
 

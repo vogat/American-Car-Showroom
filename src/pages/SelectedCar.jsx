@@ -4,8 +4,17 @@ import Add from '../components/Add';
 import Selected from '../components/Selected';
 import { Fragment, useState } from 'react';
 import axios from 'axios';
+import DisplaySection from '../components/Display';
+import WebgiViewer from '../components/WebgiViewer';
+import { useRef } from 'react';
 
 function SelectedCar({ handleCreate, cars, handleDelete, handleEdit }) {
+    const webgiViewerRef = useRef();
+    const contentRef = useRef();
+
+    const handlePreview = () => {
+        webgiViewerRef.current.triggerPreview();
+    }
 
     //  const allCars = cars.map(car => {
     //     return (
@@ -29,12 +38,11 @@ function SelectedCar({ handleCreate, cars, handleDelete, handleEdit }) {
 	// }
     // console.log(carDetail)
     return ( 
-        <div className='SelectedCar'>
-			<Nav />
-			<Home />
-			<Add handleCreate={handleCreate} />
-			<Selected cars={cars} handleDelete={handleDelete} handleEdit={handleEdit}/>
-            {/* {allCars} */}
+        <div className='MainPage'>
+            <div ref={contentRef} id='content'>
+                <Selected cars={cars} handleDelete={handleDelete} handleEdit={handleEdit}/>
+            </div>
+            <WebgiViewer contentRef={contentRef} ref={webgiViewerRef} />
 		</div>
      );
 }

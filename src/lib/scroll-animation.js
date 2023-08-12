@@ -4,9 +4,9 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
     const tl = gsap.timeline();
 
     tl.to(position, {
-        x: !isMobile ? -3.38 : -7.0,
-        y: !isMobile ? -10.74 : -12.2,
-        z: !isMobile ? -5.93: -6.0,
+        x: !isMobile ? -9.68 : -7.0,
+        y: !isMobile ? 7.66 : -12.2,
+        z: !isMobile ? -7.98: -6.0,
         scrollTrigger: {
             trigger: '.add-section',
             start: "top bottom",
@@ -17,9 +17,9 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
         onUpdate
     })
     .to(target, {
-        x: !isMobile ? 1.52 : 0.7,
-        y: !isMobile ? 0.77 : 1.9,
-        z: !isMobile ? -1.08 : 0.7,
+        x: !isMobile ? 2 : 0.7,
+        y: !isMobile ? -1 : 1.9,
+        z: !isMobile ? -.5 : 0.7,
         scrollTrigger: {
             trigger: '.add-section',
             start: "top bottom",
@@ -49,9 +49,44 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
         },
     })
     .to(position, {
-        x: !isMobile ? 1.56 : 9.36,
-        y: !isMobile ? 5.0 : 10.95,
-        z: !isMobile ? 0.01 : 0.09,
+        x: !isMobile ? 0.12 : 9.36,
+        y: !isMobile ? 9.39 : 10.95,
+        z: !isMobile ? -21.28 : 0.09,
+        scrollTrigger: {
+            trigger: '.cars-section',
+            start: "top bottom",
+            end: "top top",
+            scrub: 2,
+            immediateRender: false
+        },
+        onUpdate
+    })
+    .to(target, {
+        x: !isMobile ? 11.8 : -1.62,
+        y: !isMobile ? 0.74 : 0.62,
+        z: !isMobile ? -13.80 : -0.06,
+        scrollTrigger: {
+            trigger: '.cars-section',
+            start: "top bottom",
+            end: "top top",
+            scrub: 2,
+            immediateRender: false
+        },
+    })
+    .to('.cars-section', {
+        opacity: 1,
+        scrollTrigger: {
+            trigger: '.cars-section',
+            start: "top bottom",
+            end: "top top",
+            scrub: 2,
+            immediateRender: false
+        },
+    })
+    .to(position, {
+        x: !isMobile ? -5.66 : -7.0,
+        y: !isMobile ? 2.68 : -12.2,
+        z: !isMobile ? 3.59: -6.0,
         scrollTrigger: {
             trigger: '.display-section',
             start: "top bottom",
@@ -62,9 +97,9 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
         onUpdate
     })
     .to(target, {
-        x: !isMobile ? -0.55 : -1.62,
-        y: !isMobile ? 0.32 : 0.62,
-        z: !isMobile ? 0.0 : -0.06,
+        x: !isMobile ? 0 : -1.62,
+        y: !isMobile ? 0 : 0.62,
+        z: !isMobile ? -20 : -0.06,
         scrollTrigger: {
             trigger: '.display-section',
             start: "top bottom",

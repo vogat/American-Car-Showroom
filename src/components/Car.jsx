@@ -7,7 +7,7 @@ function Car({ car, cars, getCarDetails, carDetail }) {
 		getCarDetails(car);
 	}, []);
 
-    const data = carDetail
+    const data = car
 
     return ( 
         <Fragment key={car._id}>

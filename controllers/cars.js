@@ -37,9 +37,11 @@ async function create(req, res) {
 }
 
 async function edit(req, res) {
-	const id = req.params.carId
+	const id = req.body._id
+    console.log(req.body)
 	try {
 		const gallery = await Car.findByIdAndUpdate(id, req.body);
+        console.log(gallery)
 		res.status(202).json(gallery);
 	} catch (err) {
 		res.status(400).json({error: err});

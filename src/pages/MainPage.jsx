@@ -2,6 +2,7 @@ import Nav from '../components/Nav';
 import Home from '../components/Home';
 import Add from '../components/Add';
 import Cars from '../components/Cars';
+import DisplaySection from '../components/Display';
 import WebgiViewer from '../components/WebgiViewer';
 // import Loader from './components/Loader'
 import { useRef } from 'react';
@@ -36,6 +37,7 @@ function MainPage({ handleCreate, cars }) {
                 <Home />
                 <Add handleCreate={handleCreate} />
                 <Cars cars={cars}  />
+                <DisplaySection triggerPreview={handlePreview} />
             </div>
             <WebgiViewer contentRef={contentRef} ref={webgiViewerRef} />
 		</div>
