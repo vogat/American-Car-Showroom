@@ -6,7 +6,7 @@ import Car from './Car';
 
 function Cars({ cars }) {
     const [carDetail, setCarDetail] = useState({});
-    const URL = 'http://localhost:3001'
+    const URL = 'https://americancarshowroom.onrender.com/'
 
     async function getCarDetails(car) {
 		try {

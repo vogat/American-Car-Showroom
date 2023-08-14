@@ -8,8 +8,7 @@ export default function App() {
 
 	const [cars, setCars] = useState([]);
 
-	const URL = 'http://localhost:3001';
-	// const URL = 'https://themeltingpot-07h3.onrender.com'
+	const URL = 'https://americancarshowroom.onrender.com/';
 
 	async function getCars() {
 		try {
