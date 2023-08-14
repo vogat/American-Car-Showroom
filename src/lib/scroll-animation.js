@@ -3,6 +3,8 @@ import gsap from 'gsap';
 export const scrollAnimation = (position, target, isMobile, onUpdate) => {
     const tl = gsap.timeline();
 
+    const scrubvar = 2
+
     tl.to(position, {
         x: !isMobile ? -9.68 : -7.0,
         y: !isMobile ? 7.66 : -12.2,
@@ -11,7 +13,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.add-section',
             start: "top bottom",
             end: "top top",
-            scrub: 4,
+            scrub: scrubvar,
             immediateRender: false
         },
         onUpdate
@@ -24,7 +26,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.add-section',
             start: "top bottom",
             end: "top top",
-            scrub: 4,
+            scrub: scrubvar,
             immediateRender: false
         },
     })
@@ -34,7 +36,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.add-section',
             start: "top bottom",
             end: "top top",
-            scrub: 4,
+            scrub: scrubvar,
             immediateRender: false
         },
     })
@@ -44,7 +46,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.add-section',
             start: "top bottom",
             end: "top top",
-            scrub: 4,
+            scrub: scrubvar,
             immediateRender: false
         },
     })
@@ -56,7 +58,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.cars-section',
             start: "top bottom",
             end: "top top",
-            scrub: 4,
+            scrub: scrubvar,
             immediateRender: false
         },
         onUpdate
@@ -69,7 +71,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.cars-section',
             start: "top bottom",
             end: "top top",
-            scrub: 4,
+            scrub: scrubvar,
             immediateRender: false
         },
     })
@@ -79,7 +81,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.cars-section',
             start: "top bottom",
             end: "top top",
-            scrub: 4,
+            scrub: scrubvar,
             immediateRender: false
         },
     })
@@ -91,7 +93,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.display-section',
             start: "top bottom",
             end: "top top",
-            scrub: 4,
+            scrub: scrubvar,
             immediateRender: false
         },
         onUpdate
@@ -104,7 +106,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.display-section',
             start: "top bottom",
             end: "top top",
-            scrub: 4,
+            scrub: scrubvar,
             immediateRender: false
         },
     })
@@ -114,7 +116,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.display-section',
             start: "top bottom",
             end: "top top",
-            scrub: 4,
+            scrub: scrubvar,
             immediateRender: false
         },
     })

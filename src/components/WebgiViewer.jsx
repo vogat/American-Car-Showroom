@@ -149,7 +149,7 @@ const WebgiViewer = forwardRef((props, ref) => {
                 trigger: '.display-section',
                 start: "top bottom",
                 end: "top top",
-                scrub: 4,
+                scrub: 2,
                 immediateRender: false
             },
             onUpdate: () => {
@@ -165,7 +165,7 @@ const WebgiViewer = forwardRef((props, ref) => {
                 trigger: '.display-section',
                 start: "top bottom",
                 end: "top top",
-                scrub: 4,
+                scrub: 2,
                 immediateRender: false
             },
         });
