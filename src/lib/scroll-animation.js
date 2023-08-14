@@ -11,7 +11,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.add-section',
             start: "top bottom",
             end: "top top",
-            scrub: 2,
+            scrub: 4,
             immediateRender: false
         },
         onUpdate
@@ -24,7 +24,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.add-section',
             start: "top bottom",
             end: "top top",
-            scrub: 2,
+            scrub: 4,
             immediateRender: false
         },
     })
@@ -34,7 +34,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.add-section',
             start: "top bottom",
             end: "top top",
-            scrub: 2,
+            scrub: 4,
             immediateRender: false
         },
     })
@@ -44,7 +44,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.add-section',
             start: "top bottom",
             end: "top top",
-            scrub: 2,
+            scrub: 4,
             immediateRender: false
         },
     })
@@ -56,7 +56,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.cars-section',
             start: "top bottom",
             end: "top top",
-            scrub: 2,
+            scrub: 4,
             immediateRender: false
         },
         onUpdate
@@ -69,7 +69,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.cars-section',
             start: "top bottom",
             end: "top top",
-            scrub: 2,
+            scrub: 4,
             immediateRender: false
         },
     })
@@ -79,7 +79,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.cars-section',
             start: "top bottom",
             end: "top top",
-            scrub: 2,
+            scrub: 4,
             immediateRender: false
         },
     })
@@ -91,7 +91,7 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.display-section',
             start: "top bottom",
             end: "top top",
-            scrub: 2,
+            scrub: 4,
             immediateRender: false
         },
         onUpdate
@@ -99,12 +99,12 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
     .to(target, {
         x: !isMobile ? 0 : -1.62,
         y: !isMobile ? 0 : 0.62,
-        z: !isMobile ? -20 : -0.06,
+        z: !isMobile ? 0 : -0.06,
         scrollTrigger: {
             trigger: '.display-section',
             start: "top bottom",
             end: "top top",
-            scrub: 2,
+            scrub: 4,
             immediateRender: false
         },
     })
@@ -114,8 +114,9 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
             trigger: '.display-section',
             start: "top bottom",
             end: "top top",
-            scrub: 2,
+            scrub: 4,
             immediateRender: false
         },
     })
+    
 }

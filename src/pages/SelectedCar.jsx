@@ -9,6 +9,7 @@ import WebgiViewer from '../components/WebgiViewer';
 import { useRef } from 'react';
 
 function SelectedCar({ handleCreate, cars, handleDelete, handleEdit }) {
+    
     const webgiViewerRef = useRef();
     const contentRef = useRef();
 
@@ -42,7 +43,7 @@ function SelectedCar({ handleCreate, cars, handleDelete, handleEdit }) {
             <div ref={contentRef} id='content'>
                 <Selected cars={cars} handleDelete={handleDelete} handleEdit={handleEdit}/>
             </div>
-            <WebgiViewer contentRef={contentRef} ref={webgiViewerRef} />
+            {/* <WebgiViewer contentRef={contentRef} ref={webgiViewerRef} /> */}
 		</div>
      );
 }

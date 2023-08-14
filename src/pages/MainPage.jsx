@@ -33,7 +33,6 @@ function MainPage({ handleCreate, cars }) {
     return ( 
         <div className='MainPage'>
             <div ref={contentRef} id='content'>
-                <Nav />
                 <Home />
                 <Add handleCreate={handleCreate} />
                 <Cars cars={cars}  />

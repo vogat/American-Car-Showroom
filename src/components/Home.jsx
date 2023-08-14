@@ -25,16 +25,12 @@ function Home() {
             <span className="description">
                 A car showroom where American car owners can share their car with other enthusiasts online.
             </span>
-            <ul className="links">
-                <li>
+            <div className="links">
                     {/* <button className="button">Add Car</button> */}
-                    <button className="button" onClick={handleAddCar}>Add Car</button>
-                </li>
-                <li>
+                    <div className="button"><a onClick={handleAddCar}>Add Car</a></div>
                     {/* <button className="button">Showroom</button> */}
-                    <a className="button" onClick={handleShowroom}>Showroom</a>
-                </li>
-            </ul>
+                    <div className="button"><a onClick={handleShowroom}>Showroom</a></div>
+            </div>
         </div>
      );
 }

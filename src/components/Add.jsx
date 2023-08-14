@@ -42,7 +42,7 @@ function Add({ handleCreate }) {
                         <input className="AddInput" type="text" name="img" placeholder="image"  onChange={handleChange} />
                     </ul>
                     <ul>
-                        <input className="AddInput" type='submit' />
+                        <input id="SubmitBtn" type='submit' />
                     </ul>
                 </form>
             </div>

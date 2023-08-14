@@ -34,6 +34,9 @@ const WebgiViewer = forwardRef((props, ref) => {
     const [previewMode, setPreviewMode] = useState(false);
     const [isMobile, setisMobile] = useState(null);
 
+    const initialCameraPosition = { x: -7.72, y: 3.65, z: 4.89 };
+    const initialCameraTarget = { x: 0.0, y: 0.0, z: 0.0 };
+
     useImperativeHandle(ref, () => ({
         triggerPreview() {
             setPreviewMode(true);
@@ -43,7 +46,7 @@ const WebgiViewer = forwardRef((props, ref) => {
             gsap.to(positionRef, {
                 x: -7.72,
                 y: 3.65,
-                z: 4.9,
+                z: 4.89,
                 duration: 2,
                 onUpdate: () => {
                     viewerRef.setDirty();
@@ -149,7 +152,7 @@ const WebgiViewer = forwardRef((props, ref) => {
                 trigger: '.display-section',
                 start: "top bottom",
                 end: "top top",
-                scrub: 2,
+                scrub: 4,
                 immediateRender: false
             },
             onUpdate: () => {
@@ -165,7 +168,7 @@ const WebgiViewer = forwardRef((props, ref) => {
                 trigger: '.display-section',
                 start: "top bottom",
                 end: "top top",
-                scrub: 2,
+                scrub: 4,
                 immediateRender: false
             },
         });

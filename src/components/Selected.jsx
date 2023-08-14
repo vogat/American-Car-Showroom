@@ -1,8 +1,8 @@
 import {useLocation} from 'react-router-dom';
 // import NavBar from '../../component/NavBar/NavBar';
 // import Header from '../../component/Header/Header';
-import { useState } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState, useLayoutEffect } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 
 // export default function ({handleDeleteOrder}) {
 
@@ -21,12 +21,18 @@ import { Link } from "react-router-dom";
 // }
 
 function Selected({cars, handleDelete, handleEdit, carDetail, getCarDetails}) {
+    const navigate = useNavigate();
 
     const data = useLocation().state.data;
     console.log(data)
 
     const handleBack = () => {
-       //scroll
+        setCar({...data}); // Reset car state
+        // Reset camera positions and targets here
+        // setCameraPosition(initialCameraPosition);
+        // setCameraTarget(initialCameraTarget);
+
+        navigate(`/`);
     }
 
     const [car, setCar] = useState({...data})
@@ -35,12 +41,29 @@ function Selected({cars, handleDelete, handleEdit, carDetail, getCarDetails}) {
         setCar({...car, [event.target.name]: event.target.value})
     }
 
+    const instantShowroom = () => {
+        const element = document.querySelector(".cars-section");
+        window.scrollTo({
+            top: element?.getBoundingClientRect().top,
+            left: 0,
+            behavior: 'auto'
+        })
+        console.log('working')
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(car)
         handleEdit(car)
+        navigate(`/`)
     }
 
+    useLayoutEffect(() => {
+        setTimeout(() => {
+            instantShowroom();
+        }, 1000);    
+    }, []);
+    
     return ( 
         <div className="cars-section wrapper">
                 <p className="text">Showroom</p>
