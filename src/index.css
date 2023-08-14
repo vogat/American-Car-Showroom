@@ -338,6 +338,36 @@ body::-webkit-scrollbar-thumb {
   margin: 0 14px;
   border: none;
 }
+.cars-section .AddInput {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.cars-section .AddInput:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* .cars-section #SubmitBtn {
+  background: #0071e3;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 400;
+  min-width: 28px;
+  padding: 8px 16px;
+  border-radius: 980px;
+  margin: 0 14px;
+  border: none;
+} */
 
 .cars-section.wrapper {
   margin-left: auto;
@@ -389,6 +419,10 @@ body::-webkit-scrollbar-thumb {
   height: 20vmin;
   object-fit: cover;
   border-radius: 2vmin;
+}
+
+#car-name {
+  text-decoration: none;
 }
 
 #cars:hover {
@@ -480,4 +514,100 @@ body::-webkit-scrollbar-thumb {
 
 .selectedCar {
   opacity: 1;
+}
+
+#show-image {
+  width: 60vmin;
+  height: 40vmin;
+  object-fit: cover;
+  border-radius: 2vmin;
+}
+
+#show-name {
+  font-size: 3vmin;
+}
+
+.ShowButton {
+  margin: 0 10vmin 0 10vmin;
+  background: black;
+  text-decoration: none;
+  color: red;
+  border: solid;
+  border-color: red;
+  border-width: 0.35vmin;
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.ShowButton:hover {
+  color: white;
+  border-color: white;
+}
+
+details summary {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  user-select: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+details summary:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the details content */
+details > * {
+  margin-top: 10px;
+  margin-bottom: 2vmin;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+details > form {
+  display: flex;
+  flex-direction: column;
+}
+
+details > form ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+details > form ul:last-child {
+  margin-bottom: 0;
+}
+
+details > form .AddInput {
+  width: 100%;
+  max-width: 700px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  margin-bottom: 6px;
+}
+
+details > form #SubmitBtn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+details > form #SubmitBtn:hover {
+  background-color: #0056b3;
 }

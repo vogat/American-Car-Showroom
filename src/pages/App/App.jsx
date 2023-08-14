@@ -1,21 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
-import Nav from '../../components/Nav';
-import Add from '../../components/Add';
-import Cars from '../../components/Cars';
-import Home from '../../components/Home';
 import MainPage from '../MainPage';
 import SelectedCar from '../SelectedCar';
-import EditCar from '../EditCar';
 
 export default function App() {
 
 	const [cars, setCars] = useState([]);
-	// const [orders, setOrders] = useState([]);
-
-	// const [user, setUser] = useState(null);
-
 
 	const URL = 'http://localhost:3001';
 	// const URL = 'https://themeltingpot-07h3.onrender.com'
@@ -28,15 +19,6 @@ export default function App() {
 			console.log(err);
 		}
 	}
-
-	// async function getOrders() {
-	// 	try {
-	// 		const response = await axios.get(`${URL}/api/orders/`);
-	// 		setOrders(response.data);
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// }
 
 	async function handleCreate(createdCar) {
 		try {
@@ -74,43 +56,6 @@ export default function App() {
 		}
 	}
 
-	// function handleAddToCart(addedCar) {
-	// 	setCart([...cart, addedItem]);
-	// }
-
-	// function handleRemoveFromCart(deletedItem) {
-	// 	const idx = cart.findIndex((cartItem) => cartItem === deletedItem);
-	// 	const updatedItems = [...cart]
-	// 	updatedItems.splice(idx, 1);
-	// 	setCart(updatedItems);
-	// }
-
-	// async function handleCreateOrder(cart) {
-	// 	const data = {
-	// 		cartItems: cart,
-	// 		username: user,
-	// 		isDelivery: false,
-	// 	}
-	// 	try {
-	// 		const response = await axios.post(`${URL}/api/orders/`, data);
-	// 		const newOrder = response.data.order;
-	// 		setOrders([...orders, newOrder]);
-	// 		setCart(defaultCart);
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// }
-
-	// async function handleDeleteOrder(order) {
-	// 	const id = order._id
-	// 	try {
-	// 		await axios.delete(`${URL}/api/orders/${id}`);
-	// 		const NotDeletedOrders = orders.filter(o => o._id != id);
-	// 		setOrders(NotDeletedOrders);
-	// 	} catch (err) {
-	// 		console.log(err)
-	// 	}
-	// }
 
 	return(
 		<main className="App">
@@ -118,7 +63,6 @@ export default function App() {
 				<Routes>
 					<Route path='/' element={<MainPage cars={cars} handleCreate={handleCreate} />} />
 					<Route path='/:carId' element={<SelectedCar cars={cars} handleDelete={handleDelete} handleEdit={handleEdit} />} />
-					<Route path='/:carId/edit' element={<EditCar cars={cars} handleDelete={handleDelete} handleEdit={handleEdit} />} />
 				</Routes>
 			</>
 		</main>

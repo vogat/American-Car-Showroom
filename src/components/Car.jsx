@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Car({ car, cars, getCarDetails, carDetail }) {
+function Car({ car, getCarDetails }) {
 
     useEffect(() => {
 		getCarDetails(car);
