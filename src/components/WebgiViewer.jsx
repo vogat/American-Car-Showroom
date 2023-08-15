@@ -43,7 +43,7 @@ const WebgiViewer = forwardRef((props, ref) => {
             gsap.to(positionRef, {
                 x: -7.72,
                 y: 3.65,
-                z: 4.89,
+                z: 4.9,
                 duration: 2,
                 onUpdate: () => {
                     viewerRef.setDirty();
@@ -56,6 +56,8 @@ const WebgiViewer = forwardRef((props, ref) => {
             viewerRef.scene.activeCamera.setCameraOptions({ controlsEnabled: true });
         }
     }));
+
+    console.log('hello');
 
     const memoizedScrollAnimation = useCallback(
         (position, target, isMobile, onUpdate) => {
