@@ -43,7 +43,7 @@ const WebgiViewer = forwardRef((props, ref) => {
             gsap.to(positionRef, {
                 x: -7.72,
                 y: 3.65,
-                z: 4.9,
+                z: 4.89,
                 duration: 2,
                 onUpdate: () => {
                     viewerRef.setDirty();

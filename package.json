@@ -19,7 +19,7 @@
     "react-scripts": "5.0.1",
     "serve-favicon": "^2.5.0",
     "web-vitals": "^2.1.4",
-    "webgi": "^0.0.1"
+    "webgi": "https://storage.googleapis.com/dist.pixotronics.com/webgi/runtime/bundle-0.5.8.tgz"
   },
   "scripts": {
     "install-server": "npm install",
