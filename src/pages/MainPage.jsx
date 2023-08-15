@@ -16,19 +16,6 @@ function MainPage({ handleCreate, cars }) {
         webgiViewerRef.current.triggerPreview();
     }
 
-    // const [carDetail, setCarDetail] = useState({});
-    // const URL = 'http://localhost:3001'
-
-    // async function getCarDetails(car) {
-	// 	try {
-	// 		const response = await axios.get(`${URL}/api/cars/${car._id}/`);
-			
-	// 		setCarDetail(response.data);
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// }
-
     return ( 
         <div className='MainPage'>
             <div ref={contentRef} id='content'>

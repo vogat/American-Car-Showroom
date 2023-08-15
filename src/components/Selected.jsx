@@ -1,24 +1,7 @@
 import {useLocation} from 'react-router-dom';
-// import NavBar from '../../component/NavBar/NavBar';
-// import Header from '../../component/Header/Header';
 import React, { useState, useLayoutEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 
-// export default function ({handleDeleteOrder}) {
-
-    // return (
-    //     <div className='OrderItemPage'>
-    //         <NavBar />
-    //         <Header />
-    //         <div id="orderItemsArea">
-    //             <h3 id="customer">Customer: {data.order.username} - ${data.order.price}</h3>
-    //             <button className="orderButtons" onClick={() => handleDeleteOrder(data.order)}>Delete</button>
-    //             <button className="orderButtons">Pay</button>
-    //             <div id="allOrderedItems" onClick={ () => handlePay(data.order) }>{allItems}</div>
-    //         </div>
-    //    </div>
-    // )
-// }
 
 function Selected({cars, handleDelete, handleEdit, carDetail, getCarDetails}) {
     const navigate = useNavigate();
@@ -28,9 +11,6 @@ function Selected({cars, handleDelete, handleEdit, carDetail, getCarDetails}) {
 
     const handleBack = () => {
         setCar({...data}); // Reset car state
-        // Reset camera positions and targets here
-        // setCameraPosition(initialCameraPosition);
-        // setCameraTarget(initialCameraTarget);
 
         navigate(`/`);
     }

@@ -16,33 +16,11 @@ function SelectedCar({ handleCreate, cars, handleDelete, handleEdit }) {
         webgiViewerRef.current.triggerPreview();
     }
 
-    //  const allCars = cars.map(car => {
-    //     return (
-    //             <Fragment key={car._id}>
-    //                 <Cars car={car}/>
-    //             </Fragment>
-    //     );
-    // });
-
-    // const [carDetail, setCarDetail] = useState({});
-    // const URL = 'http://localhost:3001'
-
-    // async function getCarDetails(car) {
-	// 	try {
-	// 		const response = await axios.get(`${URL}/api/cars/${car._id}/`);
-			
-	// 		setCarDetail(response.data);
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// }
-    // console.log(carDetail)
     return ( 
         <div className='MainPage'>
             <div ref={contentRef} id='content'>
                 <Selected cars={cars} handleDelete={handleDelete} handleEdit={handleEdit}/>
             </div>
-            {/* <WebgiViewer contentRef={contentRef} ref={webgiViewerRef} /> */}
 		</div>
      );
 }

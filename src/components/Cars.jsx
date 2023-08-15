@@ -6,7 +6,7 @@ import Car from './Car';
 
 function Cars({ cars }) {
     const [carDetail, setCarDetail] = useState({});
-    const URL = 'http://localhost:3001'
+    const URL = 'https://americancarshowroom.onrender.com'
 
     async function getCarDetails(car) {
 		try {
@@ -20,20 +20,12 @@ function Cars({ cars }) {
 
     const [selection, setSelection] = useState(false);
 
-    const handleSelect = (event) => {
-        // setSelection(true);
-        // console.log(key)
-        // const selected = event
-        //  return (selected)
-    }
-
-    // const selectedCar = selected
     console.log(carDetail)
 
     const allCars = cars.map(car => {
         return (
                 <Fragment key={car._id}>
-                    <Car car={car} cars={cars} handleSelect={handleSelect} carDetail={carDetail} getCarDetails={getCarDetails} />
+                    <Car car={car} cars={cars} carDetail={carDetail} getCarDetails={getCarDetails} />
                 </Fragment>
         );
     });

@@ -26,9 +26,7 @@ function Home() {
                 A car showroom where American car owners can share their car with other enthusiasts online.
             </span>
             <div className="links">
-                    {/* <button className="button">Add Car</button> */}
                     <div className="button"><a onClick={handleAddCar}>Add Car</a></div>
-                    {/* <button className="button">Showroom</button> */}
                     <div className="button"><a onClick={handleShowroom}>Showroom</a></div>
             </div>
         </div>
