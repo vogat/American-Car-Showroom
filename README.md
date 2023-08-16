@@ -1,6 +1,4 @@
 # American Car Showroom
-# Introduction
-### The Melting Pot is an innovative restaurant app designed to offer a diverse range of food options and a delightful culinary experience for individuals with a sophisticated palate.
 
 # Hosted App
 ### To explore the hosted app, visit: https://american-car-showroom.onrender.com/
