@@ -24,7 +24,6 @@
 
 # Stretch Goals and Next Steps
 * Unfortunately there were issues with deployment so the model is not working in the browser. For now I included images from my local hosting of the website
-* The Add page also had some css that was disrupted in the deployed app and is not visible due to an opacity value in the CSS.
 * Add a user login for the website
 * Solve animation issues (can sometimes glitch out)
 
