@@ -1,7 +1,7 @@
 # American Car Showroom
 
 # Hosted App
-### To explore the hosted app, visit: https://american-car-showroom.onrender.com/
+### The backend server is currently down. Some of the front-end can be explored at the hosted app, visit: https://american-car-showroom.onrender.com/
 # Technologies Used
 ### Front-end
 * The app's front-end is developed using the latest web technologies, including CSS, JavaScript, Three.js and React. By leveraging React, I created an efficient and responsive Single Page Application (SPA) that ensures seamless user interactions.
